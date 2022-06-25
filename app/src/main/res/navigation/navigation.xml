@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/zoo_venue"
+    android:id="@+id/navigation.xml">
+
+    <fragment
+        android:id="@+id/zoo_venue"
+        tools:layout="@layout/fragment_zoo_venue"
+        android:label="@string/zoo_venue"
+        android:name="com.yihsiang.zoo.ui.venue.ZooVenueFragment">
+        <action android:id="@+id/to_animal"
+            app:destination="@id/animal">
+            <argument
+                android:name="title"
+                app:argType="string" />
+            <argument
+                android:name="venue"
+                app:argType="com.yihsiang.zoo.model.Venue"/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/animal"
+        android:label="{title}"
+        tools:layout="@layout/fragment_animal"
+        android:name="com.yihsiang.zoo.ui.animal.AnimalFragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="venue"
+            app:argType="com.yihsiang.zoo.model.Venue"/>
+        <action
+            android:id="@+id/to_animal_detail"
+            app:destination="@id/animal_detail">
+            <argument
+                android:name="title"
+                app:argType="string" />
+            <argument
+                android:name="animal"
+                app:argType="com.yihsiang.zoo.model.Animal"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/animal_detail"
+        android:label="{title}"
+        tools:layout="@layout/fragment_animal_detail"
+        android:name="com.yihsiang.zoo.ui.detail.AnimalDetailFragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="animal"
+            app:argType="com.yihsiang.zoo.model.Animal"/>
+    </fragment>
+
+</navigation>

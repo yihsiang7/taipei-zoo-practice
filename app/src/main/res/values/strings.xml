@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">zoo</string>
+
+    <string name="zoo_venue">台北市立動物園</string>
+    <string name="animal_header">動物資料</string>
+    <string name="also_known">別名</string>
+    <string name="description">簡介</string>
+    <string name="feature">辨別方式</string>
+    <string name="behavior">行為</string>
+    <string name="error_occurred">發生錯誤</string>
+</resources>
